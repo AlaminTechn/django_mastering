@@ -12,7 +12,14 @@ SECRET_KEY = 'django-insecure-(_zz@&$k_55vhzu2#uxaow^5dvo&#ui!n+vqtt%l641)s)5n*3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+
+# White listing the localhost:3000 port
+# for React
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 # Application definition
 
@@ -23,9 +30,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'myapp',
     'e_commerce',
+    'todos',
+
 ]
 
 MIDDLEWARE = [
@@ -36,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mastering_in_django.urls'

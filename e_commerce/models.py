@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# -------- Product Models----------->
+# -------- Product Models ----------->
 
 class Product(models.Model):
     product_id = models.AutoField(primary_key=True)
